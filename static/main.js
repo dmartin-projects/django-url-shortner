@@ -40,8 +40,7 @@ shorter_btn.addEventListener("click", (e) => {
 
   postData("/create", { url: url.value }).then((data) => {
     // JSON data parsed by `response.json()` call
-    shorter_url.innerText =
-      "https://url-shortner-django-project.herokuapp.com/" + data.data;
+    shorter_url.innerText = "link-to/" + data.data;
     shorter_url.href =
       "https://url-shortner-django-project.herokuapp.com/" + data.data;
   });
