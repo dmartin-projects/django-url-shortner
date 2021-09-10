@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-ul$v@tuz8i4_au++j7304@cdz7o#@#n(0ci+8f&jwrd^7+8$sj
 DEBUG = True
 
 ALLOWED_HOSTS = ['url-shortner-django-project.herokuapp.com',
-‘127.0.0.1’ ]
+'127.0.0.1' ]
 
 
 # Application definition
@@ -124,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
      BASE_DIR/'static',
