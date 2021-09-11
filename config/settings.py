@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import django_on_heroku
-import dj_database_url
-import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,10 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ul$v@tuz8i4_au++j7304@cdz7o#@#n(0ci+8f&jwrd^7+8$sj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['url-shortner-django-project.herokuapp.com',
-'127.0.0.1' ]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -83,7 +79,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-   'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -123,23 +122,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
      BASE_DIR/'static',
      
 ]
 
-LOGIN_URL = '/login'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_on_heroku.settings(locals())
 
 # https://url-shortner-django-project.herokuapp.com/ |
 #  https://git.heroku.com/url-shortner-django-project.git
