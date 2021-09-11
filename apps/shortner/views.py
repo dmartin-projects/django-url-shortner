@@ -7,7 +7,7 @@ import json
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'shortner/index.html')
 
 
 @csrf_protect

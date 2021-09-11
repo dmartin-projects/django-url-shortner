@@ -1,5 +1,5 @@
 <!------ Include the above in your HEAD tag ---------->
-
+{% load static%}
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -11,10 +11,10 @@
       id="bootstrap-css"
     />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="{% static 'shortner/css/style.css' %}" />
     <script
       language="JavaScript"
-      src="../static/main.js"
+      src="{% static 'shortner/js/main.js' %}"
       type="text/javascript"
       defer
     ></script>
