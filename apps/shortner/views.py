@@ -18,6 +18,7 @@ def create(request):
         new_url = Url(link=post_data.get('url'), uuid=uid)
         new_url.save()
         return JsonResponse({"data":uid})
+    
 
 def go(request,pk):
     url_details = Url.objects.get(uuid=pk)
